@@ -67,6 +67,8 @@ public class PainelEco implements Initializable {
     @FXML
     private TextField removerUserField;
     @FXML
+    private TextField removerProdutoField;
+    @FXML
     private TextField nomeClienteTextField;
     @FXML
     private TextField cpfClienteTextField;
@@ -152,7 +154,7 @@ public class PainelEco implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        System.out.println("#####initialize#####");
         try{
             Collection<Produto> produtosRecuperados = gravadorProduto.recuperarProdutos();
             Collection<Cliente> clientesRecuperados = gravadorCliente.recuperarClientes();
@@ -364,10 +366,11 @@ public class PainelEco implements Initializable {
     }
     public void RemoverProdutoButtonOnAction(ActionEvent event){
         try {
-            eco.removerProduto(produtoPesField.getText());
+            eco.removerProduto(removerProdutoField.getText());
             removerMessageLabel.setText("SUCESSO!");
         } catch (ProdutoNaoExisteException e) {
-            removerMessageLabel.setText("Não existe produto com esse nome");
+            e.printStackTrace();
+            removerMessageLabel.setText("Não existe produto com esse nome "+produtoPesField.getText());
         }
     }
     public void RemoverUserButtonOnAction(ActionEvent event){

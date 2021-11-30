@@ -15,6 +15,7 @@ public class SoulEco implements SistemaEco{
         this.clientes = new HashMap<>();
         this.produtos = new HashMap<>();
         this.vendas = new ArrayList<>();
+        System.out.println("####passei por aqui###");
     }
 
     @Override
@@ -31,7 +32,7 @@ public class SoulEco implements SistemaEco{
     @Override
     public void cadProdutoComVali(String nome, double preco, int quantidadeEmEstoque, boolean validade, int dia, int mes, int ano) throws ProdutoJaExisteException{
 
-        ProdutoComValidade produto = new ProdutoComValidade(nome, 0.0, 0, true, 0,0,0);
+        ProdutoComValidade produto = new ProdutoComValidade(nome, preco, quantidadeEmEstoque, true, dia,mes,ano);
         this.produtos.put(produto.getNome(), produto);
 
     }

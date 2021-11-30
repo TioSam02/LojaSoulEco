@@ -59,7 +59,7 @@ public class EcoController implements Initializable {
     }
 
     public void validarLogin(){
-        if(usuarioTextField.getText().equals("a") && senhaField.getText().equals("a")){
+        if(usuarioTextField.getText().equals("admin") && senhaField.getText().equals("admin")){
             ecoPainelPrincipal();
         }else{
             loginMessageLabel.setText("Usuario ou senha está errado. Por favo tente novamente");
