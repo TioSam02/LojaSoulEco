@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class SoulEco implements SistemaEco{
-    private Map<Integer, Cliente> clientes;
+    private Map<String, Cliente> clientes;
     private Map<String, Produto> produtos;
     private List<Venda> vendas;
 
@@ -15,7 +15,7 @@ public class SoulEco implements SistemaEco{
         this.clientes = new HashMap<>();
         this.produtos = new HashMap<>();
         this.vendas = new ArrayList<>();
-        System.out.println("####passei por aqui###");
+
     }
 
     @Override
@@ -39,7 +39,7 @@ public class SoulEco implements SistemaEco{
 
     @Override
     public void cadastraCliente(Cliente cliente) throws ClienteJaExisteException {
-        if(this.clientes.containsKey((cliente.getCpf()))){
+        if(this.clientes.containsKey(cliente.getCpf())){
             throw new ClienteJaExisteException(("Cliente já cadastrado"));
         }else {
             this.clientes.put(cliente.getCpf(), cliente);
@@ -68,7 +68,7 @@ public class SoulEco implements SistemaEco{
     }
 
     @Override
-    public Collection<Cliente> pesquisarClientes(String nome) throws ClienteNaoExisteException {
+    public Collection<Cliente> pesquisarClientes(String nome) {
         List<Cliente> clientesNomesIguais = new ArrayList<>();
 
         for(Cliente c: this.clientes.values()){
@@ -92,24 +92,24 @@ public class SoulEco implements SistemaEco{
 
     @Override
     public List<Venda> todasAsVendas() {
-
+        //TODO
         return null;
     }
 
     @Override
     public List<Venda> todasAsVendasDoDia() {
-
+        //TODO
         return null;
     }
 
     @Override
     public List<Venda> todasAsVendasDoMes() {
-
+        //TODO
         return null;
     }
 
     @Override
-    public void removerCliente(int cpf) throws ClienteNaoExisteException{
+    public void removerCliente(String cpf) throws ClienteNaoExisteException{
 
         if(clientes.containsKey(cpf)){
             clientes.remove(cpf);

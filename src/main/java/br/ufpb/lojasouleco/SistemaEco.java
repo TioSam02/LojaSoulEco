@@ -15,7 +15,7 @@ public interface SistemaEco {
 
     public Collection<Produto> todosProdutos();
 
-    public Collection<Cliente> pesquisarClientes(String nome) throws ClienteNaoExisteException;
+    public Collection<Cliente> pesquisarClientes(String nome);
 
     public Collection<Cliente> todosClientes();
 
@@ -25,7 +25,7 @@ public interface SistemaEco {
 
     public List<Venda> todasAsVendasDoMes();
 
-    public void removerCliente(int cpf) throws ClienteNaoExisteException;
+    public void removerCliente(String cpf) throws ClienteNaoExisteException;
 
     public void removerProduto(String nome) throws ProdutoNaoExisteException;
 

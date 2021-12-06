@@ -243,61 +243,6 @@
                   </Label>
                </children>
             </AnchorPane>
-            <GridPane fx:id="pnlCadCliente" layoutX="10.0" layoutY="10.0" prefHeight="619.0" prefWidth="813.0" style="-fx-background-color: #fff;">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints maxHeight="315.0" minHeight="0.0" prefHeight="6.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="640.0" minHeight="10.0" prefHeight="634.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;" />
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
-                     <children>
-                        <TextField fx:id="nomeClienteTextField" layoutX="285.0" layoutY="116.0" prefHeight="25.0" prefWidth="221.0" />
-                        <TextField fx:id="cpfClienteTextField" layoutX="285.0" layoutY="178.0" prefHeight="25.0" prefWidth="221.0" />
-                        <TextField fx:id="cepClienteTextField" layoutX="287.0" layoutY="237.0" prefHeight="25.0" prefWidth="221.0" />
-                        <Pane layoutY="3.0" prefHeight="30.0" prefWidth="813.0" style="-fx-background-color: #09A532;" />
-                        <Pane layoutY="605.0" prefHeight="30.0" prefWidth="813.0" style="-fx-background-color: #09A532;" />
-                        <Pane layoutX="783.0" layoutY="10.0" prefHeight="595.0" prefWidth="30.0" style="-fx-background-color: #09A532;" />
-                        <Button alignment="CENTER" layoutX="286.0" layoutY="360.0" mnemonicParsing="false" onAction="#CadClienteButtonOnAction" prefHeight="38.0" prefWidth="221.0" style="-fx-background-color: #09A532;" text="Adicionar Cliente" textFill="WHITE">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fx:id="addCadClienteIcon2" fitHeight="22.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../../../imgs/add.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Label alignment="CENTER" layoutX="282.0" layoutY="59.0" prefHeight="45.0" prefWidth="221.0" text="Cadastro">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="186.0" layoutY="106.0" prefHeight="45.0" prefWidth="97.0" text="Nome">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="186.0" layoutY="168.0" prefHeight="45.0" prefWidth="97.0" text="CPF">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="188.0" layoutY="227.0" prefHeight="45.0" prefWidth="97.0" text="CEP">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="cadClienteMessageLabel" alignment="CENTER" layoutX="282.0" layoutY="298.0" prefHeight="25.0" prefWidth="221.0" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </GridPane>
             <AnchorPane fx:id="pnlRemoverUser" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                <children>
                   <HBox layoutY="7.0" prefHeight="93.0" prefWidth="813.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="540.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0">
@@ -368,6 +313,78 @@
                   </Label>
                </children>
             </AnchorPane>
+            <ScrollPane fx:id="pnlHome" prefHeight="608.0" prefWidth="818.0" style="-fx-background-color: #fff;">
+               <content>
+                  <Label fx:id="homeMessageLabel" alignment="TOP_LEFT" prefHeight="1688.0" prefWidth="802.0" style="-fx-background-color: #fff;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" top="10.0" />
+                     </padding>
+                  </Label>
+               </content>
+            </ScrollPane>
+            <Label prefHeight="643.0" prefWidth="1022.0" style="-fx-background-color: #fff;" text="                    Bem Vindo a Soul Eco">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <GridPane fx:id="pnlCadCliente" layoutX="10.0" layoutY="10.0" prefHeight="619.0" prefWidth="813.0" style="-fx-background-color: #fff;">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="315.0" minHeight="0.0" prefHeight="6.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="640.0" minHeight="10.0" prefHeight="634.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;" />
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <children>
+                        <TextField fx:id="nomeClienteTextField" layoutX="285.0" layoutY="116.0" prefHeight="25.0" prefWidth="221.0" />
+                        <TextField fx:id="cpfClienteTextField" layoutX="285.0" layoutY="178.0" prefHeight="25.0" prefWidth="221.0" />
+                        <TextField fx:id="cepClienteTextField" layoutX="287.0" layoutY="237.0" prefHeight="25.0" prefWidth="221.0" />
+                        <Pane layoutY="3.0" prefHeight="30.0" prefWidth="813.0" style="-fx-background-color: #09A532;" />
+                        <Pane layoutY="605.0" prefHeight="30.0" prefWidth="813.0" style="-fx-background-color: #09A532;" />
+                        <Pane layoutX="783.0" layoutY="10.0" prefHeight="595.0" prefWidth="30.0" style="-fx-background-color: #09A532;" />
+                        <Button alignment="CENTER" layoutX="286.0" layoutY="360.0" mnemonicParsing="false" onAction="#CadClienteButtonOnAction" prefHeight="38.0" prefWidth="221.0" style="-fx-background-color: #09A532;" text="Adicionar Cliente" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="addCadClienteIcon2" fitHeight="22.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../imgs/add.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label alignment="CENTER" layoutX="282.0" layoutY="59.0" prefHeight="45.0" prefWidth="221.0" text="Cadastro">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="186.0" layoutY="106.0" prefHeight="45.0" prefWidth="97.0" text="Nome">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="186.0" layoutY="168.0" prefHeight="45.0" prefWidth="97.0" text="CPF">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="188.0" layoutY="227.0" prefHeight="45.0" prefWidth="97.0" text="CEP">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="cadClienteMessageLabel" alignment="CENTER" layoutX="282.0" layoutY="298.0" prefHeight="25.0" prefWidth="221.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
             <AnchorPane fx:id="pnlPesquisaCliente" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                <children>
                   <HBox layoutY="7.0" prefHeight="93.0" prefWidth="813.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="540.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0">
@@ -406,23 +423,6 @@
                   </Label>
                </children>
             </AnchorPane>
-            <ScrollPane fx:id="pnlHome" prefHeight="608.0" prefWidth="818.0" style="-fx-background-color: #fff;">
-               <content>
-                  <Label fx:id="homeMessageLabel" alignment="TOP_LEFT" prefHeight="1688.0" prefWidth="802.0" style="-fx-background-color: #fff;">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                     <padding>
-                        <Insets left="20.0" top="10.0" />
-                     </padding>
-                  </Label>
-               </content>
-            </ScrollPane>
-            <Label prefHeight="643.0" prefWidth="1022.0" style="-fx-background-color: #fff;" text="                    Bem Vindo a Soul Eco">
-               <font>
-                  <Font size="33.0" />
-               </font>
-            </Label>
          </children>
       </StackPane>
       <Pane layoutY="106.0" prefHeight="635.0" prefWidth="209.0" style="-fx-background-color: #fff;" />

@@ -5,17 +5,17 @@ import java.util.Objects;
 
 public class Cliente implements Serializable {
     private String nome;
-    private int cpf;
+    private String cpf;
     private int cep;
 
-    public Cliente(String nome,int cpf, int cep){
+    public Cliente(String nome,String cpf, int cep){
         this.nome = nome;
         this.cpf = cpf;
         this.cep = cep;
     }
 
     public Cliente(){
-        this("",0,0);
+        this("","",0);
     }
 
 
@@ -25,11 +25,11 @@ public class Cliente implements Serializable {
         return "Cliente: " +this.nome+ ", CPF: " +this.cpf+ ", Cep: "+this.cep;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -54,7 +54,7 @@ public class Cliente implements Serializable {
         if (this == o) return true;
         if (!(o instanceof Cliente)) return false;
         Cliente cliente = (Cliente) o;
-        return getCpf() == cliente.getCpf() && getNome().equals(cliente.getNome());
+        return getNome().equals(cliente.getNome()) && getCpf().equals(cliente.getCpf());
     }
 
     @Override

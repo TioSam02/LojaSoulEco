@@ -1,0 +1,11 @@
+Um dos pontos que podem ser melhorados no programa Loja SoulEco tendo como referência o livro Refatoração: Aperfeiçoando o Projeto de Código Existente.
+Os "bad smells" (mau cheiros) que foram encontrados no projeto foram:
+
+Código duplicado: Ocorre quando se tem a mesma expressão em dois métodos na mesma classe. Uma das maneiras para de resolver esse "bad smells" é extrair o método e
+ chamar o código em ambos os lugares, ou seja, simplificar o método e chamar o código em ambos os lugares. Quando se tem a mesma expressão em duas
+ subclasses irmãs é indicado extrair o método nas duas classes e mover os métodos nas subclasses para a superclasse. No caso do código ser similar
+ é necessário extrair o método e separar as partes semelhantes das diferentes.
+
+Cirurgia com rifle: Acontece quando você faz uma mudança e precisa fazer muitas pequenas modificações em diferentes classes. Para isso é necessário mover método,
+ ou seja, "crie um novo método com um corpo similar na classe que ele mais usa. Transforme o método antigo em uma simples delegação ou remova-o
+ completamente"(FOWLER, p.124) e depois deve-se criar um novo campo na classe desejada e alterando todos os dados desta única classe.

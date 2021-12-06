@@ -295,12 +295,10 @@ public class PainelEco implements Initializable {
     public void CadClienteButtonOnAction (ActionEvent event){
 
         if (!nomeClienteTextField.getText().isBlank() && !cpfClienteTextField.getText().isBlank() && !cepClienteTextField.getText().isBlank()) {
-            String cpfString = cpfClienteTextField.getText();
-            int cpf = Integer.parseInt(cpfString);
             String cepString = cepClienteTextField.getText();
             int cep = Integer.parseInt(cepString);
 
-            Cliente cliente = new Cliente(nomeCadProduto.getText(), cpf, cep);
+            Cliente cliente = new Cliente(nomeClienteTextField.getText(), cpfClienteTextField.getText(), cep);
             try {
                 eco.cadastraCliente(cliente);
                 cadClienteMessageLabel.setText("Cliente cadastrado com sucesso");
@@ -346,23 +344,22 @@ public class PainelEco implements Initializable {
     }
     public void PesquisarClienteButtonOnAction(ActionEvent event) {
         StringBuffer stringBuffer = new StringBuffer();
-        try {
-            Collection<Cliente> clientesNomesIguais = eco.pesquisarClientes(clientePesTextField.getText());
-            for(Cliente c : clientesNomesIguais){
-                stringBuffer.append("Nome: ");
-                stringBuffer.append(c.getNome());
-                stringBuffer.append(", CPF: ");
-                stringBuffer.append(c.getCpf());
-                stringBuffer.append(", Cep: ");
-                stringBuffer.append(c.getCep());
-                stringBuffer.append("\n");
 
-            }
-            resulPesClienteMessageLabel.setText(stringBuffer.toString());
-
-        } catch (ClienteNaoExisteException e) {
-            resulPesClienteMessageLabel.setText("Não existe cliente com esse nome");
+        Collection<Cliente> clientesNomesIguais = eco.pesquisarClientes(clientePesTextField.getText());
+        if(clientesNomesIguais.size() == 0){
+            stringBuffer.append("Não foi encontrado nenhum cliente com esse nome: "+clientePesTextField.getText());
         }
+        for(Cliente c : clientesNomesIguais){
+            stringBuffer.append("Nome: ");
+            stringBuffer.append(c.getNome());
+            stringBuffer.append(", CPF: ");
+            stringBuffer.append(c.getCpf());
+            stringBuffer.append(", Cep: ");
+            stringBuffer.append(c.getCep());
+            stringBuffer.append("\n");
+
+        }
+            resulPesClienteMessageLabel.setText(stringBuffer.toString());
     }
     public void RemoverProdutoButtonOnAction(ActionEvent event){
         try {
@@ -374,10 +371,8 @@ public class PainelEco implements Initializable {
         }
     }
     public void RemoverUserButtonOnAction(ActionEvent event){
-        String cpfString = removerUserField.getText();
-        int cpf = Integer.parseInt(cpfString);
         try {
-            eco.removerCliente(cpf);
+            eco.removerCliente(removerUserField.getText());
             removerUserMessageLabel.setText("SUCESSO!");
         } catch (ClienteNaoExisteException e) {
             removerUserMessageLabel.setText("Não existe cliente com esse cpf");
